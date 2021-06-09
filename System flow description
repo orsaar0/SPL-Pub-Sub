@@ -1,0 +1,10 @@
+The end-to-end description of our system is simple. Different intelligence sources will deliver info
+and ask for a 00 agent (or a couple of them) and a gadget that are needed for some mission.
+One of the M-subscribers will process this event, it must know whether the 00 agent is available
+in the squad (M cannot perform that check on its own. She will send an event that will be
+handled by one of the Moneypenny-subscribers), and whether a fit gadget in his Inventory (as
+before, M cannot perform that check on its own. She will send an event that will be handled be
+Q). After those checks are made, M fills a report to her diary in case all conditions are met. She
+also increments a counter of total received missions (this counter is incremented whether the
+mission was executed or not). This should happen while communication between the
+Subscribers\Publishers is allowed only via the MessageBroker.
